@@ -1,0 +1,46 @@
+.assistant {
+  margin:0;
+  padding:0;
+  width:900px;
+  height:490px;
+}
+
+.assistant .btn_nav 
+{
+    position: absolute; 
+    top: 0px; 
+    height: 490px; 
+    width: 40px; 
+    text-align: center; 
+    text-decoration: none;
+}
+.assistant .btn_nav_precedent 
+{
+    left: 0px; 
+    background: #E4F1FF url(../images/btn_precedent_36x35.png) no-repeat scroll 4px 50%;
+    border-right: 1px solid #88BBDD;
+}
+.assistant .btn_nav_suivant 
+{
+    right: 0px; 
+    background: #E4F1FF url(../images/btn_nav_suivant_36x35.png) no-repeat scroll 4px 50%;
+    border-left: 1px solid #88BBDD;
+}
+.assistant .btn_nav_disabled
+{
+    background: #E4F1FF none no-repeat scroll 4px 50%;
+    cursor: not-allowed;
+}
+
+.assistant #RollContainer {
+  z-index: 999;
+  margin: 0px;
+  padding: 0px; 
+  width: 820px; 
+  height: 490px; 
+  border-left: 1px solid #88BBDD;
+  border-right: 1px solid #88BBDD; 
+  left: 40px;
+  position: absolute;
+  overflow: hidden;
+}

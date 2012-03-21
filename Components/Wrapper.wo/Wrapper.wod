@@ -1,0 +1,45 @@
+PageErreur : WOActionURL {
+	action = pageErreur;
+}
+PageTelechargements : WOActionURL {
+	action = pageTelechargements;
+}
+PageApresEnregistrer : WOActionURL {
+	action = pageApresEnregistrer;
+}
+
+
+Titre : WOString {
+	value = titre;
+}
+Body : WOBody {
+	onload = onloadJS;
+}
+ContentContainer : AjaxUpdateContainer {
+	id = "ContentContainer";
+	class = "global";	
+}
+Content : WOComponentContent {
+	
+}
+Copyright : WOString {
+	value = copyright;
+	escapeHTML = false;
+}
+Contact : WOHyperlink {
+	href = contact;
+	string = "Contactez-nous";
+}
+Version : WOString {
+	value = version;
+	escapeHTML = false;
+}
+ErreurContainer : AjaxUpdateContainer {
+	id = "ErreurContainer";
+}
+ErreurScript : WOString {
+	value = erreurScript;
+}
+Busy: AjaxBusyIndicator {
+	divID = "busy";
+}

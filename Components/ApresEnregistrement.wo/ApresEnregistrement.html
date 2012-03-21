@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+
+  <body bgcolor = "#BFDBFF">
+      <span><center>
+        <p>
+          <font color = "red" >Votre dossier de <webobject name = "NomApplication"/> a &eacute;t&eacute; enregistr&eacute; avec succ&egrave;s.</font>        
+        </p>
+          <webobject name = "IsExisteDejaUnRendezVous">
+            <p>
+              Afin de confirmer votre <webobject name = "NomApplication"/> de mani&egrave;re d&eacute;finitive, <br/>
+              vous devrez vous rendre le<br/> 
+              <font color="red"><b><webobject name = "DateRdv"></webobject></b></font> &agrave; <font color="red"><b><webobject name = "HeureRdv"></webobject></b></font> <br/>&agrave; l'adresse suivante<br/>
+              <font color="red"><b><webobject name = "AdresseConvocation1"></webobject><br/><webobject name = "AdresseConvocation2"></webobject></b></font><br/>
+            </p>
+            <p>  
+              muni(e) de votre convocation, de votre dossier dat&eacute; et sign&eacute; ainsi que de toutes les pi&egrave;ces mentionn&eacute;es sur la convocation.
+            </p>
+			<webobject name = "IsImpressionPossible">
+            <p>  
+              Pour <b>imprimer votre dossier</b> mis &agrave; jour, cliquez <webobject name = "Imprimer"><b>ici</b></webobject>.
+            </p>
+            </webobject>
+            <p>  
+              Pour <b>finaliser votre <webobject name = "NomApplication"/></b>, cliquez <webobject name = "RetourAccueil"><b>ici</b></webobject>.
+            </p>
+          </webobject>
+          <webobject name = "IsNotExisteDejaUnRendezVous">
+            <webobject name = "IsRendezVousPossible">
+              <p>
+                Il vous faut maintenant <font color="red">prendre rendez-vous</font> afin de confirmer de mani&egrave;re d&eacute;finitive votre <webobject name = "NomApplication"/>.<br/>
+                Pour cela, cliquez <webobject name = "PrendreRdv"><font color="red"><b>ici</b></font></webobject> afin d'&ecirc;tre redirig&eacute;(e) vers le module de choix du rendez-vous.
+              </p>  
+			<webobject name = "IsImpressionPossible">
+            <p>  
+              Pour <b>imprimer votre dossier</b> mis &agrave; jour, cliquez <webobject name = "Imprimer"><b>ici</b></webobject>.
+            </p>
+            </webobject>
+            </webobject>
+            <webobject name = "IsNotRendezVousPossible">
+	            <p>  
+	              Pour <b>finaliser votre <webobject name = "NomApplication"/></b>, cliquez <webobject name = "RetourAccueil"><b>ici</b></webobject>.
+	            </p>
+            </webobject>
+          </webobject>
+      </center></span>
+  </body>    
+</html>

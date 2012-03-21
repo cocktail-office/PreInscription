@@ -1,0 +1,145 @@
+.module
+{
+	background: url(../images/background.gif);
+	vertical-align: top;
+	margin: 0;
+	padding: 0;
+	font-size: 11px;
+}
+.module span {
+  font-weight: bold;
+  font-size: 11px; 
+}
+
+.module .container
+{
+	text-align:center;
+	width: 820px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.module .container .aide {
+  z-index: 999;
+  width: 30px;
+  border: 0px solid #4E80C0;
+  height: 30px;
+  text-align: center;
+  padding: 3px;
+  float: right;
+  position: relative;
+}
+.module .container .commentaire {
+  width: 90%;
+  border: 1px solid #4E80C0;
+  color: red;
+  background-color: #E4F1FF;
+  height: 59px;
+  text-align: center;
+  padding: 0px;
+  margin-top: 2px;
+}
+.module .container .commentaire span {
+  font-weight: normal;
+  font-size: 11px; 
+}
+
+.module .container .formulaire {
+}
+
+.module .container .formulaire form {
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+.module .container .formulaire form fieldset {
+  width: 95%; 
+  border: 1px solid #88BBDD;
+  margin: 0px; 
+  padding: 2px;
+  text-align: left;
+  background-color: transparent;
+}
+
+.module .container .formulaire form fieldset legend {
+	padding-left: 10px;
+	margin: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #009999;
+	text-align: left;
+	font-weight: bold;
+	font-size: 14px;
+	border: none;
+	background-color: transparent;
+}
+.module .container .formulaire form table {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+}
+
+.module .container .formulaire form table tbody tr td {
+	padding: 0;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	margin: 0;
+}
+.module .container .formulaire form table.liste tbody tr td {
+	padding: 0;
+	margin: 0;
+}
+
+.module .container .formulaire tbody.avecSelection tr:hover td {
+  background-color: #4E80C0;
+}
+
+.module .container select, input {
+	border: 1px solid #4E80C0;	
+}
+.module .container h1, h2, h3
+{
+	background: white url(../images/h3.png) repeat-x scroll 0pt 95%;
+	color: #006699;
+	text-align: left;
+	padding-left: 5px;
+	margin: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.module .container h1
+{
+	font-size: 20px;
+	height: 29px;
+}
+
+.module .container h2
+{
+	font-size: 16px;
+}
+.module .container h3
+{
+	color: #007799;
+	padding-left: 10px;
+	padding-bottom: 2px;
+	margin: 0px;
+	font-size: 14px;
+	width: 95%;
+}
+.module .radio, .checkbox {
+  border: none;
+}
+
+.module .etiquette    
+{ 
+  font-weight: bold;
+  font-size: 12px; 
+  color: #006699;
+  cursor: pointer;
+}
+
+.questionnaire {
+  font-size: 11px;
+}
+.questionnaire tbody tr th {
+  border: 0px solid #88BBDD;
+}

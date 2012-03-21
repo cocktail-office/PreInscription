@@ -1,0 +1,5 @@
+RetourAccueil : WOHyperlink {
+	action = retourAccueil;
+	onClick = "parent.Dialog.closeInfo();";
+	target = "_top";
+}

@@ -1,0 +1,5 @@
+WebServerResources/*
+**/*.png
+**/*.gif
+**/*.js
+**/*.css

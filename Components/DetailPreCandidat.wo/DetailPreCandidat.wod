@@ -1,0 +1,209 @@
+Wrapper : Wrapper {
+	titre = "Recherche de Pre-candidats";
+}
+ContainerQbe : AjaxUpdateContainer {
+	id = "ContainerQbe";
+	class = "qbe";
+	onComplete = "function(oC) {ContainerListePreCandidatsUpdate();ContainerDetailPreCandidatUpdate();}";
+}
+WaitSmall : WOImage {
+  filename = "images/ajax-loader_gris.gif";
+  framework = "FwkCktlThemes";
+  id = "busy";
+  style = "display:none;";
+}
+
+FormQbePreCandidat : WOForm {
+	id = "FormQbePreCandidat";
+	action = ctrl.rechercherLesPreCandidats;
+}
+ObserverFormQbePreCandidat : AjaxObserveField {
+	action = ctrl.rechercherLesPreCandidats;
+	onFailure = "function(oF) {ErreurContainerUpdate();}";
+	onSuccess = "function(oS) {ContainerListePreCandidatsUpdate();ContainerDetailPreCandidatUpdate();}";
+}
+NumeroBEA : WOTextField {
+  	id = "NumeroBEA";
+  	value = qbe.candBea;
+  	size = "13";
+}
+ObserverNumeroBEA : AjaxObserveField {
+	action = ctrl.rechercherLesPreCandidats;
+	fullSubmit = false;
+	observeFieldID = "NumeroBEA";	
+	updateContainerID = "ContainerListePreCandidats";
+	onFailure = "function(oF) {ErreurContainerUpdate();}";
+	onSuccess = "function(oS) {ContainerDetailPreCandidatUpdate();}";
+}
+NumeroEtudiant : WOTextField {
+  	id = "NumeroEtudiant";
+  	value = qbe.etudNumero;
+  	numberformat = "#";
+}
+ObserverNumeroEtudiant : AjaxObserveField {
+	action = ctrl.rechercherLesPreCandidats;
+	fullSubmit = false;
+	observeFieldID = "NumeroEtudiant";
+	updateContainerID = "ContainerListePreCandidats";
+	onFailure = "function(oF) {ErreurContainerUpdate();}";
+	onSuccess = "function(oS) {ContainerDetailPreCandidatUpdate();}";
+}
+
+DateDeNaissance : WOTextField {
+  	id = "DateDeNaissance";
+  	value = qbe.candDateNais;
+  	dateformat = "%d/%m/%Y";
+}
+ObserverDateDeNaissance : AjaxObserveField {
+	action = ctrl.rechercherLesPreCandidats;
+	fullSubmit = false;
+	observeFieldID = "DateDeNaissance";	
+	updateContainerID = "ContainerListePreCandidats";
+	onFailure = "function(oF) {ErreurContainerUpdate();}";
+	onSuccess = "function(oS) {ContainerDetailPreCandidatUpdate();}";
+}
+
+Nom : WOTextField {
+  	id = "Nom";
+  	value = qbe.candNom;
+}
+ObserverNom : AjaxObserveField {
+	action = ctrl.rechercherLesPreCandidats;
+	fullSubmit = false;
+	observeFieldID = "Nom";	
+	updateContainerID = "ContainerListePreCandidats";
+	onFailure = "function(oF) {ErreurContainerUpdate();}";
+	onSuccess = "function(oS) {ContainerDetailPreCandidatUpdate();}";
+}
+
+Prenom : WOTextField {
+  	id = "Prenom";
+  	value = qbe.candPrenom;
+}
+ObserverPrenom : AjaxObserveField {
+	action = ctrl.rechercherLesPreCandidats;
+	fullSubmit = false;
+	observeFieldID = "Prenom";	
+	updateContainerID = "ContainerListePreCandidats";
+	onFailure = "function(oF) {ErreurContainerUpdate();}";
+	onSuccess = "function(oS) {ContainerDetailPreCandidatUpdate();}";
+}
+
+Rechercher : CktlAjaxButton {
+	type = "find";
+	action = ctrl.rechercherLesPreCandidats;
+	updateContainerID = "ContainerListePreCandidats";
+	onFailure = "function(oF) {ErreurContainerUpdate();}";
+	onSuccess = "function(oS) {ContainerDetailPreCandidatUpdate();}";
+}
+
+AnnulerLaRecherche : CktlAjaxButton {
+	type = "cancel";
+	action = ctrl.annulerLaRecherche;
+	onComplete = "function(oC) {ContainerQbeUpdate();}";
+}
+
+IsAfficherListePreCandidats : WOConditional {
+  condition = ctrl.preCandidats.count;
+}
+NbrePreCandidats : WOString {
+	value = ctrl.preCandidats.count;
+}
+ContainerListePreCandidats : AjaxUpdateContainer {
+	id = "ContainerListePreCandidats";
+	class = "precandidats";
+}
+PreCandidats : WORepetition {
+	list = ctrl.preCandidats;
+	item = ctrl.unPreCandidat;
+}
+
+
+AfficherDetailPreCandidat : AjaxUpdateLink {
+	action = ctrl.afficherLeDossier;
+	// updateContainerID = "ContainerDetailPreCandidat";
+	onComplete = "function(oC) {ContainerDetailPreCandidatUpdate();ErreurContainerUpdate();}";
+}
+PreCandidatNom : WOString {
+  value = ctrl.unPreCandidat.candNom;
+}
+
+PreCandidatPrenom : WOString {
+  value = ctrl.unPreCandidat.candPrenom;
+}
+
+PreCandidatDateDeNaissance : WOString {
+  value = ctrl.unPreCandidat.candDateNais;
+  dateformat = "%d/%m/%Y";
+}
+
+PreCandidatNumBEA : WOString {
+  value = ctrl.unPreCandidat.candBea;
+}
+
+PreCandidatNumEtudiant : WOString {
+  value = ctrl.unPreCandidat.etudNumero;
+}
+
+PreCandidatEtablissement : WOString {
+  value = ctrl.unPreCandidat.toRne.lcRne;
+}
+
+PreCandidatRdv : WOString {
+	value = rdvPreCandidat;
+}
+
+ContainerDetailPreCandidat : AjaxUpdateContainer {
+	id = "ContainerDetailPreCandidat";
+	class = "detailPrecandidat";
+}
+IsAfficherDetailPreCandidat : WOConditional {
+  condition = isAfficherDetailPreCandidat;
+}
+
+NomEtPrenomEtudiant : WOString {
+	value = session.etudiant.prenomNom;
+}
+
+Cadres : WOPopUpButton {
+	id = "Cadres";
+	list = ctrl.cadres;
+	item = ctrl.unCadre;
+	displayString = cadreTabName;
+	selection = ctrl.unCadreSelectionne;
+}
+ObserverCadres : AjaxObserveField {
+	action = afficherCadre;
+	observeFieldID = "Cadres";
+	fullSubmit = false;
+	updateContainerID = "CadreContainer";
+}
+
+CadreContainer : AjaxUpdateContainer {
+	id = "CadreContainer";
+	class = "container";
+	style = "width:890px;";
+}
+DivCadreName : WOGenericContainer {
+	elementName = "div";
+	id = divCadreName;
+}
+
+Cadre : WOSwitchComponent {
+	WOComponentName = ctrl.unCadreSelectionne.garnucheCadre.componentName;
+	etudiant = session.etudiant;
+	anneeScolaire = ctrl.unCadreSelectionne.garnucheApplication.anneeEnCours;
+	disabled = true;
+	modeConsultation = true;
+	cadre = ctrl.unCadreSelectionne;
+}
+
+IsPreInscrit : WOConditional {
+  condition = session.etudiant.isPreInscrit;
+}
+
+
+FormChoixCadre : WOForm {
+	style = "margin:0px;padding:0px;";
+	action = afficherCadre;
+}

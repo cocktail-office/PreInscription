@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	  <script type = "text/javascript">
+		function openLoginWin() {
+			Dialog.info($('login').innerHTML, {windowParameters: {className:"bluelighting", title:"Identification", width:450}});            
+		}
+	  </script>
+
+    <title>Consultation du dossier administratif des pr&eacute;-candidats</title>
+
+  </head>
+  
+  <webobject name = "Body">
+  <div id = "login" style = "display:none">
+  <webobject name = "IsAfficherErreur">
+  <div style="text-align:center;">
+      <span id = "login_error_msg" class = "login_error wrap useMaxWidth"><webobject name = "MessageErreur"></webobject></span>
+ </div>
+ </webobject>
+    <div style = "clear:both"></div>
+    <webobject name = "FormLogin">
+      <center>
+      <p>
+        <span class = "login_label">Identifiant :</span>
+        <span class = "login_input">
+          <webobject name = "Login" />
+        </span>
+      </p>
+      <div style = "clear:both"></div>
+      <p>
+        <span class = "login_label nowrap">Mot de passe :</span>
+        <span class = "login_input nowrap">
+          <webobject name = "MotDePasse" />
+        </span>
+      </p>
+      <div style = "clear:both"></div>
+      <p>
+        <span class = "bluelighting_buttons">
+          <webobject name = "Valider" />
+        </span>
+      </p>
+      </center>
+    </webobject>
+    <div style = "clear:both"></div>
+  </div>
+  </webobject>
+
+</html>

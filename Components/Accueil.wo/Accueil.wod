@@ -1,0 +1,103 @@
+Wrapper : Wrapper {
+	onloadJS = onloadJS;
+}
+IdentificationContainer : AjaxUpdateContainer {
+	id = "IdentificationContainer";
+	class = "identification";
+	// style = "-moz-border-radius: 10px 10px 0px 0px;";
+}
+NumeroEtudiant : WOString {
+	value = session.etudiant.numero;
+}
+PrenomEtNom : WOString {
+	value = session.etudiant.prenomNom;
+}
+NumeroINE : WOString {
+	value = session.etudiant.numeroINE;
+}
+AnneeScolaire : WOString {
+	value = anneeScolaireAAfficher;
+}
+
+Commentaire : WOString {
+	value = commentaires;
+	escapeHTML = false;
+}
+
+IconeCompleterDossier : WOImage {
+	alt = "Completer le dossier";
+	border = 0;
+	filename = "images/edit.png";	
+	framework = "app";
+	height = "24";
+	width = "24";
+}
+CompleterLeDossier : WOHyperlink {
+	action = completerLeDossier;
+}
+
+IconeImprimerLeDossier : WOImage {
+	alt = "Imprimer le dossier";
+	border = 0;
+	filename = "images/fileprint.png";	
+	framework = "app";
+	height = "24";
+	width = "24";
+}
+ImprimerLeDossier : WOHyperlink {
+	action = imprimerLeDossier;
+	target = "_new";
+}
+
+IconeTelecharger : WOImage {
+	alt = "Telecharger les documents d'information";
+	border = 0;
+	filename = "images/file-manager.png";	
+	framework = "app";
+	height = "24";
+	width = "24";
+}
+Telecharger : WOHyperlink {
+	//action = telecharger;
+	href = "#";
+	onClick = "openWinPageTelechargements();return true;";
+}
+
+IconeRendezVous : WOImage {
+	alt = "Modifier le rendez-vous";
+	border = 0;
+	filename = "images/cal.png";	
+	framework = "app";
+	height = "24";
+	width = "24";
+}
+RendezVous : WOHyperlink {
+	action = modifierRdv;
+}
+
+IconeQuitter : WOImage {
+	alt = "Quitter l'application";
+	border = 0;
+	filename = "images/24x24/logout_24x24.png";
+	framework = "FwkCktlThemes";
+	height = "24";
+	width = "24";
+}
+Quitter : WOHyperlink {
+	action = quitter;
+}
+
+IsPreEtudiant : WOConditional {
+  condition = session.etudiant.isPreInscrit;
+}
+IsImpressionPossible : WOConditional {
+	condition = session.ctrlImpression.isPossibleImprimerLeDossierAdministratif;
+}
+IsRdvPossible : WOConditional {
+  condition = isRdvPossible;
+}
+
+NomApplication : WOString {
+	value = session.garnucheApplication.applNom.toLowerCase;
+	escapeHTML = false;
+}

@@ -1,0 +1,27 @@
+Documents : WORepetition {
+	list = ctrl.documents;
+	item = unDocument;
+}
+IsLienOk : WOConditional {
+	condition = unDocument.adocLien;
+}
+LibelleDocument : WOString {
+	value = unDocument.adocTexte;
+}
+LienTelechargement : WOHyperlink {
+	href = unDocument.adocLien;
+	target = "_new";
+}
+ImageTelechargement : WOImage {
+	border = 0;
+	filename = "images/telechargement.png";
+	height = "18";
+	width = "18";
+}
+
+Fermer : WOHyperlink {
+	action = fermer;
+	target = "_top";
+	onclick = "parent.Dialog.closeInfo();";
+	string = "Fermer";
+}

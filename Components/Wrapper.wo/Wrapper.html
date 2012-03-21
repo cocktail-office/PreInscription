@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	  <script type = "text/javascript">
+		function openLoginWin() {
+			Dialog.info($('login').innerHTML, {windowParameters: {className:"bluelighting", title:"Identification", width:450}});            
+		}
+		
+		function openAlertWin(content) {
+		  Dialog.alert(content, {className:"bluelighting", title:"Avertissement", width:400, okLabel:"Fermer"});
+		}
+
+  function openWinAide (href, title) {
+    var win = Windows.getWindow(title+'_win');
+    var minimizable = false;
+    var dock = $('dock');
+    if ( dock != null  && typeof((dock)!='undefined') ) {
+      minimizable = true;
+    }
+    if (typeof(win)=='undefined') {
+	  win = new Window(title+'_win',{className: "bluelighting", title: title, width:600, height:400, url: href, minimizable: minimizable, showEffectOptions: {duration:1.5}});    
+	  win.setZIndex(99999);
+	  win.showCenter();
+    } else {
+      if ( dock != null  && typeof((dock)!='undefined') ) {
+		  // Rechercher l'element correspondant a la win dans le dock
+		  var dock_id = title+'_dock_id';
+		  var element = $(dock_id);
+		  if (element!=null && typeof(element)!='undefined') {
+		    element.win.showCenter();
+		    new Effect.Fade(element, {afterFinish: function() {element.remove()}});
+		  } else {
+		    win.showCenter();
+		  }
+	  } else {
+	    win.toFront();
+	  }
+    }
+    
+  }
+
+	  function openWinPageErreur() {
+	    openWin('<webobject name = "PageErreur"></webobject>','Erreur',true,null,null,'bluelighting');
+	  }
+	
+	  function openWinPageTelechargements() {
+	    openWin('<webobject name = "PageTelechargements"></webobject>','TELECHARGEMENTS',true,600,null,'bluelighting');
+	  }
+
+	  function openWinPageApresEnregistrer() {
+	    openWin('<webobject name = "PageApresEnregistrer"></webobject>','Enregistrement du dossier',false,600,null,'bluelighting');
+	  }
+
+	  </script>
+
+    <title><webobject name = "Titre"></webobject></title>
+
+	<script  type="text/javascript">
+	  if(window.history.forward(1) != null) {
+	    window.history.forward(1);
+	  }
+	</script>
+  </head>
+  <webobject name = "Body">
+      <webobject name = "ContentContainer">
+        <webobject name = "Content"></webobject> 
+      <div id="copyright" class="copyright">
+        <span style="float:left;"><webobject name = "Copyright"/></span>
+        <span style="float:right;"><webobject name = "Contact"/></span>
+<!--        <span style="float:right;"><webobject name = "Version"/></span>
+-->      </div>
+      </webobject>
+      <webobject name = "ErreurContainer">
+        <script type = "text/javascript"><webobject name = "ErreurScript"/></script>
+      </webobject>
+      <webobject name="Busy"/>
+  </webobject>
+</html>

@@ -1,0 +1,4 @@
+changelog.txt PreInscription
+-----------------------
+
+v1.2.. du xx/xx/2012

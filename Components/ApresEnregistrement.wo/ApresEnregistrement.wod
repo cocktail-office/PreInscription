@@ -1,0 +1,50 @@
+NomApplication : WOString {
+	value = session.garnucheApplication.applNom.toLowerCase;
+	escapeHTML = false;
+}
+IsExisteDejaUnRendezVous : WOConditional {
+	condition = session.etudiant.rendezVous;
+}
+DateRdv : WOString {
+	value = session.etudiant.rendezVous.convocDate;
+	dateformat = "%d %B %Y";
+}
+HeureRdv : WOString {
+	value = session.etudiant.rendezVous.convocHeureEnClair;
+}
+AdresseConvocation1 : WOString {
+	value = session.etudiant.rendezVous.toRdvPlanningInfo.lieu1Convoc;
+}
+AdresseConvocation2 : WOString {
+	value = session.etudiant.rendezVous.toRdvPlanningInfo.lieu2Convoc;
+}
+IsImpressionPossible : WOConditional {
+	condition = session.ctrlImpression.isPossibleImprimerLeDossierAdministratif;
+}
+Imprimer : WOHyperlink {
+	action = imprimer;
+	target = "_new";
+}
+RetourAccueil : WOHyperlink {
+	action = accueil;
+	onclick = "parent.Dialog.closeInfo();";
+	target = "_top";
+}
+
+IsNotExisteDejaUnRendezVous : WOConditional {
+	condition = session.etudiant.rendezVous;
+	negate = true;
+}
+IsRendezVousPossible : WOConditional {
+	condition = isRendezVousPossible;
+	// condition = true;
+}
+PrendreRdv : WOHyperlink {
+	action = prendreRdv;
+	target = "_top";
+	onclick = "parent.Dialog.closeInfo();";
+}
+IsNotRendezVousPossible : WOConditional {
+	condition = isRendezVousPossible;
+	negate = true;
+}

@@ -1,0 +1,95 @@
+<webobject name = "Wrapper">
+<style>
+.formulaire {
+  height: 321px;
+  overflow-y:auto;
+}
+</style>
+  <webobject name = "ContainerQbe">
+    <center>
+    <fieldset title = "Recherche" >
+    <legend>Recherche&nbsp;<webobject name = "WaitSmall"></webobject></legend>
+    <webobject name = "FormQbePreCandidat">
+      <table width="100%">
+        <thead>
+          <tr>
+            <th>N&deg; BEA/INE</th>
+            <th>N&deg; Etudiant</th>
+            <th>Date de naissance</th>
+            <th>Nom</th>
+            <th>Pr&eacute;nom</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><webobject name = "NumeroBEA"/><webobject name = "ObserverNumeroBEA"/></td>
+            <td><webobject name = "NumeroEtudiant"/><webobject name = "ObserverNumeroEtudiant"/></td>
+            <td><webobject name = "DateDeNaissance"/><webobject name = "ObserverDateDeNaissance"/></td>
+            <td><webobject name = "Nom"/><webobject name = "ObserverNom"/></td>
+            <td><webobject name = "Prenom"/><webobject name = "ObserverPrenom"/></td>
+		    <td><webobject name = "Rechercher"/></td>
+		    <td><webobject name = "AnnulerLaRecherche"/></td>
+          </tr>
+        </tbody>
+      </table>
+    </webobject>
+    </fieldset>
+    </center>
+  </webobject>
+  
+  <webobject name = "ContainerListePreCandidats">
+    <webobject name = "IsAfficherListePreCandidats">
+    <center>
+    <fieldset title = "PreCandidats" >
+    <legend><font color = "red"><webobject name = "NbrePreCandidats"></webobject></font>&nbsp;Pr&eacute;-candidat(s)</legend>
+    <div style = "overflow-y:scroll;height:90px;">
+	    <table class="liste avecSelection" width="100%">
+	      <thead>
+	        <tr>
+	            <th>Nom</th>
+	            <th nowrap>Pr&eacute;nom</th>
+	            <th nowrap>Date de naissance</th>
+	            <th nowrap>N&deg; BEA/INE</th>
+	            <th nowrap>N&deg; Etudiant</th>
+	            <th nowrap>Etablissement</th>
+	            <th nowrap>Rdv</th>
+	        </tr>
+	      </thead>
+	      <tbody>
+	        <webobject name = "PreCandidats">
+	          <tr>
+	            <td><webobject name = "AfficherDetailPreCandidat"><webobject name = "PreCandidatNom"/></webobject></td>
+	            <td><webobject name = "PreCandidatPrenom"/></td>
+	            <td class="alignToCenter useMinWidth nowrap"><webobject name = "PreCandidatDateDeNaissance"/></td>
+	            <td class="alignToCenter useMinWidth nowrap"><webobject name = "PreCandidatNumBEA"/></td>
+	            <td class="alignToCenter useMinWidth nowrap"><webobject name = "PreCandidatNumEtudiant"/></td>
+	            <td class="useMinWidth nowrap"><webobject name = "PreCandidatEtablissement"/></td>
+	            <td class="useMinWidth nowrap"><webobject name = "PreCandidatRdv"/></td>
+	          </tr>
+	        </webobject>
+	      </tbody>
+	    </table>
+	    </div>
+	    </fieldset>
+	    </center>
+	  </webobject>
+  </webobject>
+  
+  <webobject name = "ContainerDetailPreCandidat">
+    <webobject name = "IsAfficherDetailPreCandidat">
+      <center>
+      <fieldset>
+        <legend><webobject name = "NomEtPrenomEtudiant"></webobject><webobject name = "IsPreInscrit"> : <font color = "red">Pr&eacute;-Inscrit(e)</font> </webobject></legend>
+        <div class="module" style="border:1px solid #88BBDD;">
+        <div style="float:right;padding:3px;"><webobject name = "FormChoixCadre"><webobject name = "Cadres"/><webobject name = "ObserverCadres"/></webobject></div>
+        <webobject name = "CadreContainer">
+          <webobjects name = "DivCadreName">
+            <webobject name = "Cadre"/>
+          </webobjects>
+        </webobject>
+        </div>
+      </fieldset>
+      </center>
+    </webobject>
+  </webobject>
+</webobject>

@@ -1,0 +1,152 @@
+Wrapper : Wrapper {
+}
+
+MenuContainer : AjaxUpdateContainer {
+	id = "MenuContainer";
+	class = "menu";
+}
+
+IsEnregistrerPossible : WOConditional {
+	condition = isEnregistrerPossible;
+}
+Enregistrer : AjaxHyperlink {
+	action = enregistrer;
+	onFailure = "function(oF){ErreurContainerUpdate();}";
+	onSuccess = "function(oS){openWinPageApresEnregistrer();}";
+}
+ImageEnregistrer : WOImage {
+	filename = "images/enregistrer_le_dossier.png";
+	alt = "Enregistrer le dossier";
+	style = "border:none; background: transparent;";
+}
+Annuler : WOHyperlink {
+	onClick = "return confirm('Voulez-vous vraiment annuler la saisie de votre dossier ?');";
+	action = accueil;
+}
+ImageAnnuler : WOImage {
+	alt = "Annuler";
+	filename = "images/annuler.png";
+	style = "border:none; background: transparent;";
+}
+IdentificationContainer : AjaxUpdateContainer {
+	id = "IdentificationContainer";
+	class = "identification";
+}
+NumeroEtudiant : WOString {
+	value = session.etudiant.numero;
+}
+PrenomEtNom : WOString {
+	value = session.etudiant.prenomNom;
+}
+AnneeScolaire : WOString {
+	value = anneeScolaireAAfficher;
+}
+NumeroINE : WOString {
+	value = session.etudiant.numeroINE;
+}
+
+NavigationContainer : AjaxUpdateContainer {
+	id = "NavigationContainer";
+	//class = "navigation";
+	//style="float:left;width:820px;";
+}
+ModulesForNavigation : WORepetition {
+	list = ctrl.modulesAAfficher;
+	//list = modules;
+	item = ctrl.unModuleForNavigation;
+}
+SpanForNavigation : WOGenericContainer {
+	elementName = "span";
+	id = spanForNavigationId;
+	style = styleModuleForNavigation;
+}
+UnModuleForNavigation : AjaxUpdateLink {
+	action = ctrl.afficherLeModule;
+	onClickBefore = "onclickbefore($('btn_precedent'))";
+	onSuccess = ctrl.onCompleteAfficherLeModule;
+	onComplete = "function(oC){NavigationContainerUpdate();}";
+	disabled = isModuleForNavigationDisabled;
+	// updateContainerID = "NavigationContainer";	
+}
+UnModuleForNavigationLibelle : WOString {
+	value = ctrl.unModuleForNavigation.garnucheCadre.cadrCode;
+}
+
+TableRoll : WOGenericContainer {
+	elementName = "table";
+	id = "roll";
+	style = styleRoll;
+	cellspacing = "0";
+	cellpadding = "0";
+	//border = "1";
+}
+Modules : WORepetition {
+	list = ctrl.modules;
+	item = unModule;
+}
+ContainerModule: AjaxUpdateContainer {
+	id = containerModuleId;
+	class = "container";
+}
+DivModuleName : WOGenericContainer {
+	elementName = "div";
+	id = divModuleName;
+	style = divModuleNameStyle;
+}
+Module : WOSwitchComponent {
+	WOComponentName = unModule.garnucheCadre.componentName;
+	// etudiant = etudiant;
+	//anneeScolaire = anneeScolaire;
+	etudiant = session.etudiant;
+	anneeScolaire = session.garnucheApplication.anneeEnCours;
+	cRne = session.codeRne;
+	//disabled = disabled;
+	componentCache = componentCache;
+	cadre = unModule;
+}
+
+Precedent : AjaxHyperlink {
+	id = "btn_precedent";
+	class = classBtnPrecedent;
+	actif=false;
+	action = ctrl.precedent;
+	onClickBefore = "onclickbefore($('btn_precedent'))";
+	onSuccess = ctrl.onSuccessPrecedent;
+	onComplete = "function(oC){NavigationContainerUpdate();MenuContainerUpdate();}";
+}
+Suivant : AjaxHyperlink {	
+	id = "btn_suivant";
+	class = classBtnSuivant;
+	action = ctrl.suivant;
+	onClickBefore = "onclickbefore($('btn_suivant'))";
+	onSuccess = ctrl.onSuccessSuivant;
+	onFailure = "function(oF){ErreurContainerUpdate();disableAnchor($('btn_suivant'), false);}";
+	onComplete = "function(oC){NavigationContainerUpdate();MenuContainerUpdate();}";
+}
+
+AfficherLePremierModuleDeNavigation : AjaxHyperlink {
+	action = ctrl.afficherPremierModuleDansBarreDeNavigation;
+	onComplete = "function(oC){NavigationContainerUpdate();}";	
+}
+AfficherLeDernierModuleDeNavigation : AjaxHyperlink {
+	action = ctrl.afficherDernierModuleDansBarreDeNavigation;
+	onComplete = "function(oC){NavigationContainerUpdate();}";	
+}
+
+FlecheGauche : WOImage {
+	filename = "images/fleche_gauche.png";
+	height = "24";
+	width = "24";
+	style = "border:none; background: transparent;";
+}
+
+FlecheDroite : WOImage {
+	filename = "images/fleche_droite.png";
+	height = "24";
+	width = "24";
+	style = "border:none; background: transparent;";
+}
+
+IsAfficherFlechesDeNavigation : WOConditional {
+  condition = isAfficherFlechesDeNavigation;
+}

@@ -1,0 +1,31 @@
+CktlDefaultPage1: CktlDefaultPage {
+	pageTitle = "Inscriptions administratives";
+}
+
+imgLigneJaune: WOImage {
+	border = "0";
+	src = imageLigneSrc;
+	width = "100%";
+	height = "6";
+}
+
+imgLogo: WOImage {
+	alt = "Logo Universite";
+	src = application.mainLogoURL;
+}
+
+
+linkLogin: WOHyperlink {
+  class = "linkPage";
+	href = lienLoginCAS;
+}
+
+strComment: WOString {
+	value = titleComment;
+	escapeHTML = false;
+}
+
+strCopy: WOString {
+	value = application.copyright;
+	escapeHTML = false;
+}

@@ -1,0 +1,40 @@
+Titre : WOString {
+	value = "PRÉ-INSCRIPTION";
+}
+Body : WOBody {
+	onload = "openLoginWin();setTimeout('Form.Element.activate(\'LoginId\')',50);";
+}
+Wrapper : Wrapper {
+	onloadJS = "openLoginWin();setTimeout('Form.Element.activate(\'LoginId\')',500);";
+	titre = "PRE-INSCRIPTION";
+}
+IsAfficherErreur : WOConditional {
+	condition = isAfficherMessageErreur;
+}
+MessageErreur : WOString {
+	value = messageErreur;
+	escapeHTML = false;
+}
+
+FormLogin : WOForm {
+	id = "FormLogin"; 
+	directActionName = "validerLoginAdministratif";
+}
+
+Login : WOTextField {
+	id = "LoginId";
+	name = "identifiant";
+	value = login;
+	tabindex = "1";
+}
+MotDePasse : WOPasswordField {
+	name = "mot_de_passe";
+	value = password;
+	class = "alignToCenter";
+	tabindex = "2";
+}
+Valider : WOSubmitButton {
+	value = "Se connecter";
+	directActionName = "validerLoginAdministratif";
+	// action = validerLoginAdministratif;
+}

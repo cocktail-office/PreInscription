@@ -1,0 +1,296 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input, select, textarea {
+ font-family: Arial, Helvetica, sans-serif;
+ color: #000000;
+ font-size: 11px;
+ font-weight: bold;
+ border: 1px solid #88BBDD;
+}
+
+.disabled {
+  background-color: #FFFFCC;
+  color: #000000;
+  border: 1px solid #4E80C0;	
+}
+
+input[disabled=true] {
+  cursor: default;
+  background-color: #FFFFCC;
+}
+input[disabled] {
+  cursor: default;
+  background-color: #FFFFCC;
+}
+select[disabled] {
+  cursor: default;
+  background-color: #FFFFCC;
+}
+.alignToCenter {
+	text-align: center;		
+}
+.alignToLeft {
+	text-align: left;		
+}
+.alignToRight {
+	text-align: right;		
+}
+.useMaxWidth {
+	width: 100%;		
+}
+.useHalfWidth {
+	width: 50%;		
+}
+.useMinWidth {
+	width: 1%;		
+}
+.nowrap {
+	white-space:nowrap;	
+}
+.wrap {
+	width: 1%;	
+}
+.autoscroll {
+	overflow: auto;	
+}
+
+.global {
+	color: #000000;
+	background-color: #FFFFFF;
+	width: 900px;
+	height: 600px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border: 1px solid #88BBDD;
+	font-size: 11px;
+}
+
+.identification {
+  background-color: #88BBDD;
+  color: #FFFFFF;
+  height: 40px;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  display: block;
+}
+
+.navigation {
+  width: 900px;
+  font-size:9px;
+  font-weight: bold;
+  height:25px;
+  line-height:22px;
+  text-align: center;
+  white-space: nowrap;
+  display: block;
+  border-bottom:1px solid #88BBDD; 
+  background-color: #E4F1FF;
+}
+
+.navigation #NavigationContainer {
+  float:left;
+  width:820px;
+}
+
+.navigation .btn_navigation {
+  width:40px;
+  float:left;
+  text-align:center;
+  height:25px;
+}
+
+.menu {
+  background-color: #FFFFFF;
+  border-top: 1px solid #88BBDD;
+  height: 30px;
+  width: 900px;
+  margin: 0px;
+  padding: 0px;
+  display: block;
+}
+
+.dock {
+  background-color: #FFFFFF;
+  height: 30px;
+  width: 540px;
+  display: block;
+}
+.dock_icon {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+	background-color: #88BBDD;
+	color:#FFFFFF;
+	float:left;
+	font-size:7pt;
+	height:25px;
+	line-height:10px;
+	margin-left:2px;
+	margin-right:2px;
+	margin-top:2px;
+	text-align:center;
+	width:80px;
+	white-space: normal;
+}
+.copyright {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	width: 100%;
+	height : 15px;
+	background-color: #88BBDD;
+	display: block;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+.copyright a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+.accueil {
+  font-family: Arial, Helvetica, sans-serif;
+  background: url(../images/background.gif);
+  border: 0px solid #88BBDD; 
+  height:545px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  width: 900px;
+  font-size: 12px;
+}
+
+.accueil a {
+  text-decoration: none;
+}
+
+.accueil h3 {
+    background: none;
+	color: #006699;
+	text-align: left;
+	padding-left: 5px;
+	margin: 0px;
+	font-size: 20px;
+}
+
+.accueil .commentaire {
+ font-family: Arial, Helvetica, sans-serif;
+  width: 90%;
+  border: 1px solid #4E80C0;
+  background-color: #E4F1FF;
+  color: #FF0000;
+  height: 140px;
+  text-align: center;
+  padding: 2px;
+}
+
+.accueil .commentaire .bleu {
+  color: #0000FF;
+}
+
+.accueil .commentaire .rougegras {
+  color: #FF0000;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.btn_hyperlien {
+  border: 1px solid #88BBDD;
+  background-color: #FFFFFF;
+  color: #88BBDD;
+  padding: 2px;
+  text-decoration: none;
+}
+
+input, select, textarea {
+  margin: 0px;
+}
+
+.login_label, .login_input, .login_error  {
+  padding:10px;
+  color:#000;
+  text-align:left;
+  float:left; 
+  width:150px;
+  font-size:14px;
+  color:#64355A;
+}
+
+.login_input {
+  width:200px;
+}
+
+.login_error {
+  width:auto;
+  color:#F00;
+  text-decoration: blink;
+  float: none;
+}
+
+.login_input input {
+  width:auto;
+}
+
+.etiquette {
+  font-weight: bold;
+  font-size: 12px; 
+}
+
+.liste {
+  border:0px solid #88BBDD;
+  margin:0px;
+  padding:2px;
+  font-size: 12px;
+}
+.liste thead tr {
+  background-color:#88BBEE;
+  height: 18px;
+}
+.liste tbody tr {
+  height: 15px;
+}
+.liste tbody tr td {
+  padding: 0px;
+}
+.avecSelection tbody tr:hover td {
+  background-color: #4E80C0;
+  color: #FFFFFF;
+}
+.avecSelection tbody tr:hover a {
+  background-color: #4E80C0;
+  color: #FFFFFF;
+}
+.qbe {
+  height: 90px;
+  display: block;
+}
+.qbe table {
+  font-size: 12px;
+}
+.precandidats {
+    height: 120px;
+}
+.detailPrecandidat {
+    height: 375px;
+}
+fieldset {
+  width: 890px; 
+  border: 1px solid #88BBDD;
+  margin: 0px; 
+  padding: 2px;
+  text-align: left;
+}
+
+fieldset legend {
+	padding-left: 10px;
+	margin: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #009999;
+	text-align: left;
+	font-weight: bold;
+	font-size: 14px;
+}
